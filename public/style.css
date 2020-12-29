@@ -14,6 +14,7 @@
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+    
 }
 
 ::selection {
@@ -38,7 +39,9 @@ body {
     margin: 0;
     height: 100%;
     font-family: 'Montserrat', Tahoma, Verdana, sans-serif;
-    color: var(--font-lightgrey)
+    color: var(--font-lightgrey);
+    scrollbar-color: rgb(var(--bg-light)) rgb(var(--bg-dark));
+    
 }
 
 .main {
@@ -172,4 +175,41 @@ nav {
 #about-section-content div {
     flex-basis: auto;
     flex: 1;
+}
+
+#return-to-top-btn, #return-to-top-btn:visited {
+    color: var(--font-lightgrey);
+    position:fixed;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(var(--bg-light));
+    border-radius: 50%;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: background-color .4s, color .4s;
+    text-align: center;
+}
+
+#return-to-top-btn:hover {
+    position:fixed;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(var(--bg-light));
+    border-radius: 50%;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: .2s;
+    color: white;
+    text-decoration: none;
+}
+
+
+#return-to-top-btn div {
+    margin-top: 15px;
 }
