@@ -1,6 +1,8 @@
 :root {
-    --bg-light: 59, 91, 79;
-    --bg-dark: 29, 56, 52;
+    --bg-light-rgb: 59, 91, 79;
+    --bg-dark-rgb: 29, 56, 52;
+    --bg-dark: rgb(var(--bg-dark-rgb));
+    --bg-light: rgb(var(--bg-light-rgb));
     --accent-blue: #7EBCE6;
     --font-lightgrey: #c9c9c9;
     --font-darkgrey: #8f8f8f;
@@ -11,21 +13,19 @@
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
     vertical-align: baseline;
     background: transparent;
-    
 }
 
 ::selection {
     background: var(--accent-blue);
-    color: rgba(var(--bg-dark));
+    color: var(--bg-dark);
     /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
     background: var(--accent-blue);
-    color: rgba(var(--bg-dark));
+    color: var(--bg-dark);
     /* Gecko Browsers */
 }
 
@@ -40,13 +40,12 @@ body {
     height: 100%;
     font-family: 'Montserrat', Tahoma, Verdana, sans-serif;
     color: var(--font-lightgrey);
-    scrollbar-color: rgb(var(--bg-light)) rgb(var(--bg-dark));
-    
+    scrollbar-color: var(--bg-light) var(--bg-dark);
 }
 
 .main {
     width: 100%;
-    background: rgba(var(--bg-dark));
+    background: var(--bg-dark);
     overflow: auto;
     text-align: center;
 }
@@ -177,14 +176,15 @@ nav {
     flex: 1;
 }
 
-#return-to-top-btn, #return-to-top-btn:visited {
+#return-to-top-btn,
+#return-to-top-btn:visited {
     color: var(--font-lightgrey);
-    position:fixed;
+    position: fixed;
     height: 50px;
     width: 50px;
     top: 10px;
     right: 10px;
-    background-color: rgb(var(--bg-light));
+    background-color: var(--bg-light);
     border-radius: 50%;
     -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
@@ -193,12 +193,12 @@ nav {
 }
 
 #return-to-top-btn:hover {
-    position:fixed;
+    position: fixed;
     height: 50px;
     width: 50px;
     top: 10px;
     right: 10px;
-    background-color: rgb(var(--bg-light));
+    background-color: var(--bg-light);
     border-radius: 50%;
     -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
@@ -209,7 +209,51 @@ nav {
     text-decoration: none;
 }
 
-
 #return-to-top-btn div {
     margin-top: 15px;
+}
+
+.experience-item{
+    margin: 0 0 50px 0;  
+}
+
+#experience-list .experience-item:last-child{
+    margin: 0;
+}
+.experience-title-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--accent-blue);
+    font-size: 14pt;
+    align-items: flex-end;
+    box-sizing: border-box;
+}
+
+.experience-title div:first-child{
+    font-size: 14pt;
+    font-weight: 300;
+}
+.experience-title div:last-child{
+    font-size: 18pt;
+    font-weight: 600;
+}
+
+.experience-title{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.experience-image-conatiner img{
+    width: 100%;
+    object-fit: cover;
+}
+.experience-title-container div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.experience-descrip{
+    padding: 10px 0;
 }
