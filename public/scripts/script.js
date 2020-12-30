@@ -35,20 +35,24 @@ function loadExperience(expFolderName, num){
     //load experience item title (load)
     $(`#experience-title-${num}`).load(`${expFolderPath}/title`);
 
-    // //create experience image container
-    // $(`#experience-title-container-${num}`).append(`<div class="experience-image-conatiner" id="experience-image-conatiner-${num}"></div>`);
-    // //create expreience image (load)
-    // $(`#experience-image-conatiner-${num}`).append(`<img src="${expFolderPath}/image.png"></img>`);
-
     if(experiencesWithImg[num-1]){
-        // See if the file exists
+        // See if the img exists
         //create experience image container
         $(`#experience-title-container-${num}`).append(`<div class="experience-image-conatiner" id="experience-image-conatiner-${num}"></div>`);
         //create expreience image (load)
         $(`#experience-image-conatiner-${num}`).append(`<img src="${expFolderPath}/image.png"></img>`);
     }
 
-    //create experience descrtiption container
+    //create experience date container
+    $(`#exp${num}`).append(`<div class="experience-date-container" id="experience-date-container-${num}"></div>`);
+
+    //create experience date
+    $(`#experience-date-container-${num}`).append(`<div class="experience-date" id="experience-date-${num}"></div>`);
+
+    //create experience date (laod)
+    $(`#experience-date-${num}`).load(`${expFolderPath}/date`);
+
+    //create experience descrtiption 
     $(`#exp${num}`).append(`<div class="experience-descrip" id="experience-descrip-${num}"></div>`);
 
     //create experience descrtipion (load)
