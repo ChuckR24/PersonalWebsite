@@ -1,8 +1,12 @@
 :root {
-    --bg-light-rgb: 59, 91, 79;
-    --bg-dark-rgb: 29, 56, 52;
-    --bg-dark: rgb(var(--bg-dark-rgb));
-    --bg-light: rgb(var(--bg-light-rgb));
+    --bg-light: #3B5B4F;
+    --bg-light-highlight: #4B7464;
+    --bg-light-lowlight: #2C443B;
+
+    --bg-dark: #1D3834;
+    --bg-dark-highlight: #33625B;
+    --bg-dark-lowlight: #162A27;
+    
     --accent-blue: #7EBCE6;
     --font-lightgrey: #c9c9c9;
     --font-darkgrey: #8f8f8f;
@@ -122,7 +126,7 @@ nav {
 }
 
 .navsections a:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-dark-lowlight);
     transition: .2s;
     color: white;
 }
@@ -131,8 +135,9 @@ nav {
     text-align: left;
     margin: auto;
     padding: 5px 40px;
-    max-width: 600px;
+    max-width: 800px;
     margin-bottom: 40px;
+    box-sizing: border-box;
 }
 
 .section-title {
@@ -157,6 +162,7 @@ nav {
     padding: 20px;
     min-width: 200px;
     max-width: 450px;
+    box-sizing: border-box;
 }
 
 #headshot-img {
@@ -170,6 +176,15 @@ nav {
 #aboutMe-para {
     min-width: 315px;
 }
+
+@media only screen and (max-width: 415px){
+    #aboutMe-para, #headshot {
+        min-width: 100%;
+    }
+    
+
+}
+
 
 #about-section-content div {
     flex-basis: auto;
@@ -203,14 +218,14 @@ nav {
     -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--bg-light-highlight);
     transition: .2s;
     color: white;
     text-decoration: none;
 }
 
 #return-to-top-btn div {
-    margin-top: 15px;
+    margin-top: 16px;
 }
 
 .experience-item{
@@ -224,7 +239,7 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-dark-lowlight);
     color: var(--accent-blue);
     font-size: 14pt;
     align-items: flex-end;
@@ -251,6 +266,9 @@ nav {
     box-sizing: border-box;
 }
 
+
+
+
 .experience-image-conatiner img{
     width: 100%;
     object-fit: cover;
@@ -258,13 +276,19 @@ nav {
 }
 .experience-title-container div {
     flex: 1;
-    min-width: 200px;
+    min-width: 300px;
+}
+
+@media only screen and (max-width: 415px){
+    .experience-title-container div{
+        min-width: 100%; 
+    }
 }
 
 .experience-date{
-    background-color: var(--font-darkgrey);
-    color: var(--bg-dark);
-    padding: 5px;
+    background-color: var(--bg-light-highlight);
+    color: black;
+    padding: 5px 10px;
 }
 
 .experience-date-container{
