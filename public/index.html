@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/require.js"></script>
+    
     <script src="scripts/script.js"></script>
 
 </head>
@@ -74,9 +74,14 @@
             <div id="contact-button-panel">
                 <div><a class="button" href="https://www.linkedin.com/in/charlesrakaczky/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
                 <div><a class="button" href="https://github.com/ChuckR24" target="_blank" rel="noopener noreferrer">GitHub</a></div>
-                <button onClick="showEmail()" type="button">Email</button>
-                <button onClick="showCell()" type="button">Phone</button>
+                <div>
+                    <button id="emailBtn" onClick="copyEmail()" type="button">Email</button>
+                </div>
+                <div>
+                    <button id="phoneBtn" onClick="copyPhone()" type="button">Phone</button>
+                </div>
             </div>
+            <input id="contactinfo"></input>
         </div>
     </div>
     <a id="return-to-top-btn" href="#PAGETOP">

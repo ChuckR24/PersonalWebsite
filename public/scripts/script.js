@@ -9,6 +9,46 @@ $(document).ready(function() {
     loadProjcects();
 });
 
+function copyEmail(){
+    $("#emailBtn").addClass("copied");
+    $("#emailBtn").html('Copied!');
+    copyContactInfo("email");
+    setTimeout(() => { 
+        $("#emailBtn").removeClass("copied");
+        $("#emailBtn").html('Email');
+    }, 1500);
+}
+
+function copyPhone(){
+    $("#phoneBtn").addClass("copied");
+    $("#phoneBtn").html('Copied!');
+    copyContactInfo("phone");
+    setTimeout(() => { 
+        $("#phoneBtn").removeClass("copied");
+        $("#phoneBtn").html('Phone');
+    }, 1500);
+    
+}
+
+function copyContactInfo(type){
+    if(type == "email"){
+        document.getElementById("contactinfo").value = "chuck.j.rakaczky@gmail.com";
+    }else if(type == "phone"){
+        document.getElementById("contactinfo").value = "412-398-9273";
+    }
+    
+    var copyText = document.getElementById("contactinfo");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    document.getElementById("contactinfo").value = "";
+}
+
 function showEmail(){
     window.prompt("Copy to clipboard: Ctrl+C, Enter", "chuck.j.rakaczky@gmail.com");
 }
