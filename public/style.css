@@ -229,6 +229,12 @@ nav {
     font-size: 14pt;
     align-items: flex-end;
     box-sizing: border-box;
+    border-radius: 5px 5px 0 5px;
+}
+
+.experience-title-container, .experience-date{
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .experience-title div:first-child{
@@ -248,6 +254,7 @@ nav {
 .experience-image-conatiner img{
     width: 100%;
     object-fit: cover;
+    display: block;
 }
 .experience-title-container div {
     flex: 1;

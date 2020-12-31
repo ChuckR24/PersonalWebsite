@@ -1,7 +1,7 @@
 const expsDir = 'content/experiences/';
 const projsDir = 'content/projects/';
 const experienceCount = 1;
-const experiencesWithImg = [false];
+const experiencesWithImg = [true];
 
 $(document).ready(function() {
     $("#aboutMe-para").load("content/about.html");
@@ -40,7 +40,7 @@ function loadExperience(expFolderName, num){
         //create experience image container
         $(`#experience-title-container-${num}`).append(`<div class="experience-image-conatiner" id="experience-image-conatiner-${num}"></div>`);
         //create expreience image (load)
-        $(`#experience-image-conatiner-${num}`).append(`<img src="${expFolderPath}/image.png"></img>`);
+        $(`#experience-image-conatiner-${num}`).append(`<img src="${expFolderPath}/image.png">`);
     }
 
     //create experience date container
