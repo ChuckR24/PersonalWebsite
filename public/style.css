@@ -57,7 +57,7 @@ body {
 a:link,
 a:visited {
     color: var(--accent-blue);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:hover {
@@ -205,27 +205,22 @@ nav {
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
     transition: background-color .4s, color .4s;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 #return-to-top-btn:hover {
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    top: 10px;
-    right: 10px;
-    background-color: var(--bg-light);
-    border-radius: 50%;
-    -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
-    text-align: center;
     background-color: var(--bg-light-highlight);
     transition: .2s;
-    color: white;
-    text-decoration: none;
 }
 
 #return-to-top-btn div {
-    margin-top: 16px;
+    box-sizing: border-box;
+    margin: 12px;
+}
+
+#return-to-top-btn{
+    text-decoration: none;
 }
 
 .experience-item{
@@ -289,6 +284,7 @@ nav {
     background-color: var(--bg-light-highlight);
     color: black;
     padding: 5px 10px;
+    margin-bottom: 10px;
 }
 
 .experience-date-container{
