@@ -2,9 +2,12 @@ const expsDir = 'content/experiences/';
 const projsDir = 'content/projects/';
 const experienceCount = 4;
 const experiencesWithImg = [true, true, true, true];
+const projectCount = 1;
+const projectsWithImg = [true];
 
 $(document).ready(function() {
     $("#aboutMe-para").load("content/about.html");
+
     loadExperiences();
     loadProjcects();
 });
@@ -58,18 +61,20 @@ function showCell(){
 }
 
 function loadProjcects(){
-    //TODO
+    for (i = 1; i <= projectCount; i++){
+        loadProject(`project${i}`, i);
+    }
 }
 
 function loadExperiences(){
 
-    for (i = 1; i <= experienceCount; i++){
+    for (i = 1; i <= projectCount; i++){
         loadExperience(`experience${i}`, i);
     }
 }
 
 function loadExperience(expFolderName, num){
-    var expFolderPath = `content/experiences/${expFolderName}`;
+    var expFolderPath = `${expsDir}${expFolderName}`;
 
     //create experience item
     $("#experience-list").append(`<div class="experience-item" id="exp${num}"></div>`);
@@ -105,6 +110,46 @@ function loadExperience(expFolderName, num){
 
     //create experience descrtipion (load)
     $(`#experience-descrip-${num}`).load(`${expFolderPath}/description`);
+
+}
+
+function loadProject(projFolderName, num){
+    var projFolderPath = `${projsDir}${projFolderName}`;
+
+    //create project item
+    $("#project-list").append(`<div class="project-item" id="proj${num}"></div>`);
+
+    //create project item title container
+    $(`#proj${num}`).append(`<div class="project-title-container" id="project-title-container-${num}"></div>`);
+
+    //create project item title 
+    $(`#project-title-container-${num}`).append(`<div class="project-title" id="project-title-${num}"></div>`);
+
+    //load project item title (load)
+    $(`#project-title-${num}`).load(`${projFolderPath}/title`);
+
+    if(projectsWithImg[num-1]){
+        // See if the img exists
+        //create project image container
+        $(`#project-title-container-${num}`).append(`<div class="project-image-conatiner" id="project-image-conatiner-${num}"></div>`);
+        //create project image (load)
+        $(`#project-image-conatiner-${num}`).append(`<img src="${projFolderPath}/image.png">`);
+    }
+
+    //create project date container
+    $(`#proj${num}`).append(`<div class="project-date-container" id="project-date-container-${num}"></div>`);
+
+    //create project date
+    $(`#project-date-container-${num}`).append(`<div class="project-date" id="project-date-${num}"></div>`);
+
+    //create project date (laod)
+    $(`#project-date-${num}`).load(`${projFolderPath}/date`);
+
+    //create project descrtiption 
+    $(`#proj${num}`).append(`<div class="project-descrip" id="project-descrip-${num}"></div>`);
+
+    //create project descrtipion (load)
+    $(`#project-descrip-${num}`).load(`${projFolderPath}/description`);
 
 }
 
