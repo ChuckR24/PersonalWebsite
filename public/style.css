@@ -343,6 +343,12 @@ button:active, .button:active{
     background-color: var(--bg-light-lowlight);
 }
 
+#CONTACT-section p{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
 #contact-button-panel{
     display: flex;
     flex-wrap: wrap;

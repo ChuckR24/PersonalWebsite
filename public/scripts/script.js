@@ -1,7 +1,7 @@
 const expsDir = 'content/experiences/';
 const projsDir = 'content/projects/';
 const experienceCount = 4;
-const experiencesWithImg = [true, true, true, false];
+const experiencesWithImg = [true, true, true, true];
 
 $(document).ready(function() {
     $("#aboutMe-para").load("content/about.html");
