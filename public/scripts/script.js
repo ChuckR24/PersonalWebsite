@@ -1,13 +1,21 @@
 const expsDir = 'content/experiences/';
 const projsDir = 'content/projects/';
-const experienceCount = 3;
-const experiencesWithImg = [true, true, true];
+const experienceCount = 4;
+const experiencesWithImg = [true, true, true, false];
 
 $(document).ready(function() {
     $("#aboutMe-para").load("content/about.html");
     loadExperiences();
     loadProjcects();
 });
+
+function showEmail(){
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", "chuck.j.rakaczky@gmail.com");
+}
+
+function showCell(){
+    window.prompt("Cell Phone Number", "412-398-9273");
+}
 
 function loadProjcects(){
     //TODO
