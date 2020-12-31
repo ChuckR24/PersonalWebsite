@@ -47,16 +47,21 @@ body {
     font-family: 'Montserrat', Tahoma, Verdana, sans-serif;
     color: var(--font-lightgrey);
     scrollbar-color: var(--bg-light) var(--bg-dark);
+    transition: scrollbar-color .5s;
 }
 
-.main1 {
+html.dark{
+    scrollbar-color: var(--bg-dark-highlight) var(--bg-dark-lowlight);
+}
+
+#main1 {
     width: 100%;
     background: var(--bg-dark);
     overflow: auto;
     text-align: center;
 }
 
-.main2 {
+#main2 {
     width: 100%;
     background: var(--bg-dark-lowlight);
     overflow: auto;
@@ -162,14 +167,14 @@ nav {
     margin: 3px 0 20px 0;
 }
 
-.main2 .section-title {
+#main2 .section-title {
     width: 100%;
     font-weight: 600;
     font-size: 18pt;
     color: var(--accent-blue);
 }
 
-.main2 .section-title hr {
+#main2 .section-title hr {
     border-top: 1px solid var(--accent-blue);
     margin: 3px 0 20px 0;
 }
@@ -209,6 +214,22 @@ nav {
 #about-section-content div {
     flex-basis: auto;
     flex: 1;
+}
+
+#scrolldist{
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 10px;
+    left: 10px;
+}
+
+#darkspot{
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 10px;
+    left: 100px;
 }
 
 #return-to-top-btn:link{

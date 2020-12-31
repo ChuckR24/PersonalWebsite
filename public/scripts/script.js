@@ -4,6 +4,7 @@ const experienceCount = 4;
 const experiencesWithImg = [true, true, true, true];
 const projectCount = 1;
 const projectsWithImg = [true];
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
 $(document).ready(function() {
     $("#aboutMe-para").load("content/about.html");
@@ -68,7 +69,7 @@ function loadProjcects(){
 
 function loadExperiences(){
 
-    for (i = 1; i <= projectCount; i++){
+    for (i = 1; i <= experienceCount; i++){
         loadExperience(`experience${i}`, i);
     }
 }
@@ -157,6 +158,7 @@ function loadProject(projFolderName, num){
 window.onscroll = function()
 {
     var distFromTop = document.documentElement.scrollTop || document.body.scrollTop;
+    
 
     if(distFromTop >= 100)
     {
@@ -164,5 +166,13 @@ window.onscroll = function()
     }else
     {
         document.getElementById('return-to-top-btn').style.visibility="hidden";
+    }
+
+    var darkHalf = document.getElementById("main2");
+    
+    if(distFromTop >= (darkHalf.offsetTop - darkHalf.offsetHeight + vh/2)){
+        $("html").addClass("dark");
+    }else{
+        $("html").removeClass("dark");
     }
 };
