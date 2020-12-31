@@ -8,13 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
     
     <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" data-main="js/config"></script>
 
 </head>
 
 <body>
-    <div class="main">
+    <div class="main1">
         <div id="PAGETOP">
             <nav>
                 <div class="logo">
@@ -59,11 +61,29 @@
                 </div> -->
             </div>
         </div>
+        
+    </div>
+    <a id="return-to-top-btn" href="#PAGETOP">
+        <div><img src="images/return_to_top_arrow.png" ></div>
+    </a>
+    <div class="main2">
         <div class="section" id="PROJECTS-section">
             <div class="section-title">Projects
                 <hr>
             </div>
-            <p id="about-content">COMING SOON</p>
+            <div id="project-list">
+                <!-- <div class="project-item">
+                    <div class="project-title-container">
+                        <div class="project-title">
+                        </div>
+                        <div class="project-image-conatiner"></div>
+                    </div>
+                    <div class="project-date-container">
+                        <div class="project-date"></div>
+                    </div>
+                    <div class="project-descrip"></div>
+                </div> -->
+            </div>
         </div>
         <div class="section" id="CONTACT-section">
             <div class="section-title">Contact
@@ -84,9 +104,6 @@
             <input id="contactinfo"></input>
         </div>
     </div>
-    <a id="return-to-top-btn" href="#PAGETOP">
-        <div><img src="images/return_to_top_arrow.png" ></div>
-    </a>
 </body>
 
 </html>

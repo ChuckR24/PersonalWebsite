@@ -49,11 +49,19 @@ body {
     scrollbar-color: var(--bg-light) var(--bg-dark);
 }
 
-.main {
+.main1 {
     width: 100%;
     background: var(--bg-dark);
     overflow: auto;
     text-align: center;
+}
+
+.main2 {
+    width: 100%;
+    background: var(--bg-dark-lowlight);
+    overflow: auto;
+    text-align: center;
+    padding-top: 40px;
 }
 
 a:link,
@@ -154,6 +162,18 @@ nav {
     margin: 3px 0 20px 0;
 }
 
+.main2 .section-title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 18pt;
+    color: var(--accent-blue);
+}
+
+.main2 .section-title hr {
+    border-top: 1px solid var(--accent-blue);
+    margin: 3px 0 20px 0;
+}
+
 #about-section-content {
     display: flex;
     flex-direction: row;
@@ -183,8 +203,6 @@ nav {
     #aboutMe-para, #headshot {
         min-width: 100%;
     }
-    
-
 }
 
 
@@ -231,77 +249,93 @@ nav {
     text-decoration: none;
 }
 
-.experience-item{
+.experience-item, .project-item{
     margin: 0 0 50px 0;  
 }
 
-#experience-list .experience-item:last-child{
+#experience-list .experience-item:last-child, #project-list .project-item:last-child{
     margin: 0;
 }
-.experience-title-container {
+
+.experience-title-container, .project-title-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: var(--bg-dark-lowlight);
-    color: var(--accent-blue);
     font-size: 14pt;
     align-items: flex-end;
     box-sizing: border-box;
-    border-radius: 5px 5px 0 5px;
+    border-radius: 5px;
+}
+.experience-title-container {
+    background-color: var(--bg-dark-lowlight);
+    color: var(--accent-blue);
 }
 
-.experience-title-container, .experience-date{
+.project-title-container {
+    background-color: var(--bg-light);
+    color: white;
+}
+
+.experience-title-container, .experience-date, .project-title-container, .project-date{
     -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-.experience-title div:first-child{
+.experience-title div:first-child, .project-title div:first-child{
     font-size: 14pt;
     font-weight: 300;
     margin-bottom: 5px;
 }
-.experience-title div:last-child{
+.experience-title div:last-child, .project-title div:last-child{
     font-size: 18pt;
     font-weight: 600;
 }
 
-.experience-title{
+.experience-title, .project-title{
     padding: 20px;
     box-sizing: border-box;
 }
 
-
-
-
-.experience-image-conatiner img{
+.experience-image-conatiner img, .project-image-conatiner img{
     width: 100%;
     object-fit: cover;
     display: block;
 }
-.experience-title-container div {
+
+.experience-title-container div, .project-title-container div{
     flex: 1;
     min-width: 300px;
 }
 
 @media only screen and (max-width: 415px){
-    .experience-title-container div{
+    .experience-title-container div, .project-title-container div{
         min-width: 100%; 
     }
+}
+
+.experience-date, .project-date{
+    
+    padding: 5px 10px;
+    margin-bottom: 10px;
 }
 
 .experience-date{
     background-color: var(--bg-light-highlight);
     color: white;
-    padding: 5px 10px;
-    margin-bottom: 10px;
 }
 
-.experience-date-container{
+.project-date{
+    background-color: var(--accent-blue);
+    color: var(--bg-light-lowlight);
+}
+
+.experience-date-container, .project-date-container{
     display: flex;
     flex-direction: row-reverse;
 }
 
-.experience-descrip{
+
+.experience-descrip, .project-descrip{
     padding: 10px 0;
 }
 
