@@ -67,3 +67,6 @@ node_modules/
 
 #ai files
 *.ai
+
+design_resources/
+node_modules/
