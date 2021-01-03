@@ -1,5 +1,6 @@
 const expsDir = 'content/experiences/';
 const projsDir = 'content/projects/';
+const displayReturnToTopDistance = 100;
 const experienceCount = 4;
 const experiencesWithImg = [true, true, true, true];
 const projectCount = 4;
@@ -7,60 +8,72 @@ const projectsWithImg = [true, true, true, true];
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
 $(document).ready(function() {
+    //load about section content
     $("#aboutMe-para").load("content/about.html");
 
     loadExperiences();
     loadProjcects();
 
+    //hide the return to top button
     document.getElementById('return-to-top-btn').style.visibility="hidden";
 });
 
+//copy copy email address to user's clipboard
 function copyEmail(){
+    //change style of button
     $("#emailBtn").addClass("copied");
+
+    //change text of button
     $("#emailBtn").html('Copied!');
+
     copyContactInfo("email");
+
+    //let the "copied" message stay briefly then revert to unclicked styling
     setTimeout(() => { 
         $("#emailBtn").removeClass("copied");
         $("#emailBtn").html('Email');
     }, 1500);
 }
 
+//copy copy phone number to user's clipboard
 function copyPhone(){
+    //change style of button
     $("#phoneBtn").addClass("copied");
+
+    //change text of button
     $("#phoneBtn").html('Copied!');
+
     copyContactInfo("phone");
+
+    //let the "copied" message stay briefly then revert to unclicked styling
     setTimeout(() => { 
         $("#phoneBtn").removeClass("copied");
         $("#phoneBtn").html('Phone');
     }, 1500);
-    
 }
 
+//copy either email or phone number to clipboard
 function copyContactInfo(type){
+
+    //make a var for the element we're going to copy from
+    var copyText = document.getElementById("contactinfo");
+
+    //enter either email address or phone number as the element's value
     if(type == "email"){
         document.getElementById("contactinfo").value = "chuck.j.rakaczky@gmail.com";
     }else if(type == "phone"){
         document.getElementById("contactinfo").value = "412-398-9273";
     }
     
-    var copyText = document.getElementById("contactinfo");
-
-    /* Select the text field */
+    //Select the element's text field
     copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    copyText.setSelectionRange(0, 99999); // for mobile devices
   
-    /* Copy the text inside the text field */
+    //copy the selected text
     document.execCommand("copy");
 
+    //clear element's value
     document.getElementById("contactinfo").value = "";
-}
-
-function showEmail(){
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", "chuck.j.rakaczky@gmail.com");
-}
-
-function showCell(){
-    window.prompt("Cell Phone Number", "412-398-9273");
 }
 
 function loadProjcects(){
@@ -70,7 +83,6 @@ function loadProjcects(){
 }
 
 function loadExperiences(){
-
     for (i = 1; i <= experienceCount; i++){
         loadExperience(`experience${i}`, i);
     }
@@ -91,8 +103,9 @@ function loadExperience(expFolderName, num){
     //load experience item title (load)
     $(`#experience-title-${num}`).load(`${expFolderPath}/title`);
 
+    // See if the experience has an image associated with it
     if(experiencesWithImg[num-1]){
-        // See if the img exists
+        
         //create experience image container
         $(`#experience-title-container-${num}`).append(`<div class="experience-image-conatiner" id="experience-image-conatiner-${num}"></div>`);
         //create expreience image (load)
@@ -131,8 +144,8 @@ function loadProject(projFolderName, num){
     //load project item title (load)
     $(`#project-title-${num}`).load(`${projFolderPath}/title`);
 
+    // See if the project has an image associated with it
     if(projectsWithImg[num-1]){
-        // See if the img exists
         //create project image container
         $(`#project-title-container-${num}`).append(`<div class="project-image-conatiner" id="project-image-conatiner-${num}"></div>`);
         //create project image (load)
@@ -161,20 +174,24 @@ window.onscroll = function()
 {
     var distFromTop = document.documentElement.scrollTop || document.body.scrollTop;
     
-
-    if(distFromTop >= 100)
+    if(distFromTop >= displayReturnToTopDistance)
     {
+        //we're not near the top of the page, show the button
         document.getElementById('return-to-top-btn').style.visibility="visible";
     }else
     {
+        //we're back at the top of the page, hide the button
         document.getElementById('return-to-top-btn').style.visibility="hidden";
     }
 
+    //element that marks where the dark half of the website starts
     var darkHalf = document.getElementById("main2");
     
-    if(distFromTop >= (darkHalf.offsetTop - darkHalf.offsetHeight + vh/2)){
+    if(distFromTop >= (darkHalf.offsetTop - (vh/2))){
+        //we've scrolled into the dark half of the site
         $("html").addClass("dark");
     }else{
+        //we're still in the light half
         $("html").removeClass("dark");
     }
 };
