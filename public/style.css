@@ -411,7 +411,11 @@ button:active, .button:active{
 }
 
 #contact-button-panel div{
-    width: auto;
+    text-align: center;
+    width: 140px;
+}
+
+#contact-button-panel div .button, #contact-button-panel div button{
     text-align: center;
 }
 

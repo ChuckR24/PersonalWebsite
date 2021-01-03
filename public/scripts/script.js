@@ -2,8 +2,8 @@ const expsDir = 'content/experiences/';
 const projsDir = 'content/projects/';
 const experienceCount = 4;
 const experiencesWithImg = [true, true, true, true];
-const projectCount = 3;
-const projectsWithImg = [true, true, true];
+const projectCount = 4;
+const projectsWithImg = [true, true, true, true];
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
 $(document).ready(function() {
@@ -11,6 +11,8 @@ $(document).ready(function() {
 
     loadExperiences();
     loadProjcects();
+
+    document.getElementById('return-to-top-btn').style.visibility="hidden";
 });
 
 function copyEmail(){
