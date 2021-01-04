@@ -48,6 +48,7 @@ body {
     color: var(--font-lightgrey);
     scrollbar-color: var(--bg-light) var(--bg-dark);
     transition: scrollbar-color .5s;
+    background: var(--bg-dark);
 }
 
 html.dark{
@@ -400,18 +401,18 @@ button:active, .button:active{
     text-align: center;
 }
 
-#contact-button-panel{
+.contact-button-panel{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around
 }
 
-#contact-button-panel div{
+.contact-button-panel div{
     text-align: center;
     width: 140px;
 }
 
-#contact-button-panel div .button, #contact-button-panel div button{
+.contact-button-panel div .button, .contact-button-panel div button{
     text-align: center;
 }
 
