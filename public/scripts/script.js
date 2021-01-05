@@ -16,6 +16,19 @@ $(document).ready(function() {
 
     //hide the return to top button
     document.getElementById('return-to-top-btn').style.visibility="hidden";
+
+    //if viewing on safari, make transcript and resume buttons links instead of pages with embedded pdfs
+    if(navigator.vendor.match(/apple/i)) {
+        resumeBtns = document.getElementsByClassName("resumeBtn");
+        for(var i = 0 ; i < resumeBtns.length; i++){
+            resumeBtns[i].href='content\\Charles_Rakaczky_Software_Engineering_Resume_Jan_2021.pdf';
+        }
+        transcriptBtns = document.getElementsByClassName("transcriptBtn");
+        for(var i = 0 ; i < transcriptBtns.length; i++){
+            transcriptBtns[i].href='content\\Charles_Rakaczky_Unofficial_Transcript_Fall 2020.pdf';
+        }
+        alert("ran");
+    }
 });
 
 //copy copy email address to user's clipboard
