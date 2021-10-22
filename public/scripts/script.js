@@ -1,8 +1,8 @@
 const expsDir = 'content/experiences/';
 const projsDir = 'content/projects/';
 const displayReturnToTopDistance = 100;
-const experienceCount = 4;
-const experiencesWithImg = [true, true, true, true];
+const experienceCount = 5;
+const experiencesWithImg = [true, true, true, true, true];
 const projectCount = 4;
 const projectsWithImg = [true, true, true, true];
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
