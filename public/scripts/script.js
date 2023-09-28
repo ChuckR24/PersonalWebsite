@@ -92,6 +92,17 @@ function loadExperiences(){
 function loadExperience(expFolderName, num){
     var expFolderPath = `${expsDir}${expFolderName}`;
 
+    // <div class="experience-item">
+    //     <div class="experience-title-container">
+    //         <div class="experience-title"></div>
+    //         <div class="experience-image-conatiner"></div>
+    //     </div>
+    //     <div class="experience-date-container">
+    //         <div class="experience-date"></div>
+    //     </div>
+    //     <div class="experience-descrip"></div>
+    // </div>
+
     //create experience item
     $("#experience-list").append(`<div class="experience-item" id="exp${num}"></div>`);
 
@@ -132,6 +143,18 @@ function loadExperience(expFolderName, num){
 
 function loadProject(projFolderName, num){
     var projFolderPath = `${projsDir}${projFolderName}`;
+
+    // <div class="project-item">
+    //     <div class="project-title-container">
+    //         <div class="project-title">
+    //         </div>
+    //         <div class="project-image-conatiner"></div>
+    //     </div>
+    //     <div class="project-date-container">
+    //         <div class="project-date"></div>
+    //     </div>
+    //     <div class="project-descrip"></div>
+    // </div>
 
     //create project item
     $("#project-list").append(`<div class="project-item" id="proj${num}"></div>`);
